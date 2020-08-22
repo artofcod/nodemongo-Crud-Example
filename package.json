@@ -1,0 +1,39 @@
+{
+  "name": "nodemongocrud",
+  "version": "1.0.0",
+  "description": "simple node and mongo crued application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx eslint . && nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soumitracode/nodemongo-Crud-Example.git"
+  },
+  "keywords": [
+    "nodemongocrudeexample",
+    "nodecrud"
+  ],
+  "author": "Soumitra Patra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soumitracode/nodemongo-Crud-Example/issues"
+  },
+  "homepage": "https://github.com/soumitracode/nodemongo-Crud-Example#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}
