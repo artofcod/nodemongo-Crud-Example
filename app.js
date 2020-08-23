@@ -13,11 +13,23 @@ app.use(morgan('tiny'))
 
 require('dotenv').config()
 
+const router = require('./router')
+app.use(router)
+
+// database connecitng status
+const database = require('./DB')
+database().then(db => {
+  console.log('connected to database')
+})
+  .catch(err => {
+    if (err) {
+      throw err
+    }
+  })
+
 app.listen(process.env.PORT, (err) => {
   if (!err) {
-    console.log('server is running at http://localhost:' + process.env.PORT)
-  } else {
-    throw err
+    console.log('\nserver is running at http://localhost:' + process.env.PORT)
   }
 })
 
