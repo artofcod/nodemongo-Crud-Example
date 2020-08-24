@@ -9,7 +9,8 @@ This is a __CRUD__ operation project to understand mongodb with node js.I do not
  https://github.com/soumitracode/nodemongo-Crud-Example.git
 
 2. Install mongodb according to your platform or you can use online server
- Find more detailse about this [Link](https://docs.mongodb.com/manual/installation/)
+ 
+   Find more detailse about this [Link](https://docs.mongodb.com/manual/installation/)
 
 3. Unzip the folder or go inside open cmd or git bash
  
