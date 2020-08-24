@@ -5,16 +5,16 @@ This is a __CRUD__ operation project to understand mongodb with node js.I do not
 
 ### How To implement the project
 
-1 Clone or download the porject
+1. Clone or download the porject
  https://github.com/soumitracode/nodemongo-Crud-Example.git
 
-2 Install mongodb according to your platform or you can use online server
- Find more detailse about this Link
+2. Install mongodb according to your platform or you can use online server
+ Find more detailse about this [Link](https://docs.mongodb.com/manual/installation/)
 
-3 Unzip the folder or go inside open cmd or git bash
+3. Unzip the folder or go inside open cmd or git bash
  install npm here with the command
  npm install
 
-4 if you want you can create env file and put the db credentials inside that file 
+4. if you want you can create env file and put the db credentials inside that file 
  if you dont still the project will run correctly
 
