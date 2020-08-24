@@ -14,11 +14,12 @@ This is a __CRUD__ operation project to understand mongodb with node js.I do not
 
 3. Unzip the folder or go inside open cmd or git bash
  
- install npm here with the command
- `npm install`
+   install npm here with the command
+   `npm install`
 
-4. if you want you can create env file and put the db credentials inside that file 
- if you dont still the project will run correctly
+4. if you want you can create env file and put the db credentials inside that file .
+
+   if you dont still the project will run correctly
 
 ### Endpoints of the api are
 - _(GET)_  **/getall**
