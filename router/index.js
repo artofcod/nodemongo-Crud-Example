@@ -4,11 +4,20 @@ const mongo = require('mongodb')
 
 // inser single data to mongo db
 app.post('/insert', async (req, res) => {
-  const data = req.body
+  // const data = req.body
+  const {
+    firstname,
+    lastname,
+    phone
+  } = req.body
 
   getDb()
     .then(con => {
-      return con.production.collection('h999i').insertOne({ data })
+      return con.production.collection('person').insertOne({
+        FirstName: firstname,
+        LasName: lastname,
+        Phone: phone
+      })
     })
     .then(row => {
       res.json({ data: row.ops })
@@ -23,9 +32,9 @@ app.post('/insert', async (req, res) => {
 app.get('/getall', async (req, res) => {
   getDb()
   // for later implement query filtering
-  // r => r.production.collection('h999i').find({}, { 'data.test': 1 }).toArray()
+  // r => r.production.collection('person').find({}, { 'data.test': 1 }).toArray()
     .then(
-      r => r.production.collection('h999i').find({}).toArray()
+      r => r.production.collection('person').find({}).toArray()
     )
     .then(r => {
       res.send(r)
@@ -42,7 +51,7 @@ app.get('/getone/:id', (req, res) => {
 
   getDb()
     .then(
-      r => r.production.collection('h999i').find({ _id: mid }).toArray()
+      r => r.production.collection('person').find({ _id: mid }).toArray()
     )
     .then(
       r => {
@@ -58,23 +67,23 @@ app.get('/getone/:id', (req, res) => {
 // update data
 app.put('/edit/:id', (req, res) => {
   const id = new mongo.ObjectID(req.params.id)
-  const itest = req.body.test
-  // this notaition becaus i mistakenly add key with space
-  const igo = req.body['go ']
-  const ibuga = req.body.buga
+  const {
+    firstname,
+    lastname,
+    phone
+  } = req.body
 
   getDb()
     .then(
       r => {
-        return r.production.collection('h999i').findOneAndUpdate(
+        return r.production.collection('person').findOneAndUpdate(
           { _id: id },
           {
             $set:
             {
-              'data.test': itest,
-              // this notaition becaus i mistakenly add key with space
-              'data.go ': igo,
-              'data.buga': ibuga
+              FirstName: firstname,
+              LasName: lastname,
+              Phone: phone
             }
           },
           { returnOriginal: false }
@@ -98,7 +107,7 @@ app.delete('/del/:id', (req, res) => {
 
   getDb()
     .then(
-      r => r.production.collection('h999i').findOneAndDelete({ _id: id })
+      r => r.production.collection('person').findOneAndDelete({ _id: id })
     )
     .then(
       r => {
