@@ -43,12 +43,11 @@ app.get('/getone/:id', (req, res) => {
   const mid = new mongo.ObjectID(id)
   getDb()
     .then(
-
       r => r.production.collection('h999i').find({ _id: mid }).toArray()
     )
     .then(
       r => {
-        console.log('get one', r)
+        console.log(r)
         res.send(r)
       }
     )
