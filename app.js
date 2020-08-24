@@ -19,7 +19,8 @@ app.use(router)
 // database connecitng status
 const database = require('./DB')
 database().then(db => {
-  console.log('connected to database\n')
+  console.log('connected to database ',
+    process.env.CONNECT_URL + '/' + process.env.DATABASE)
 })
   .catch(err => {
     if (err) {

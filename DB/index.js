@@ -4,7 +4,9 @@ const Mongo = require('mongodb').MongoClient
 require('dotenv').config()
 
 // db 1
-const url = process.env.CONNECT_URL || 'mongodb://localhost:27017/olaf'
+const dburl = process.env.CONNECT_URL || 'mongodb://localhost:27017'
+const database = process.env.DATABASE || 'olaf'
+const url1 = dburl + '/' + database
 
 // db 2
 // const url2 = 'mongodb://localhost:27017/olaf'
@@ -19,7 +21,7 @@ module.exports = async function () {
   const database = await Promise.all(
     [
       // connecitng db 1
-      connect(url)
+      connect(url1)
 
       // connecting to db 2
       // connect(url2)
