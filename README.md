@@ -14,16 +14,16 @@ Root
 
 ### How To implement the project
 
-> #### Clone or download the porject
-> https://github.com/soumitracode/nodemongo-Crud-Example.git
+1 Clone or download the porject
+ https://github.com/soumitracode/nodemongo-Crud-Example.git
 
-> #### Install mongodb according to your platform or you can use online server
-> #### Find more detailse about this Link
+2 Install mongodb according to your platform or you can use online server
+ Find more detailse about this Link
 
-> #### Unzip the folder or go inside open cmd or git bash
-> #### install npm here with the command
-> #### npm install
+3 Unzip the folder or go inside open cmd or git bash
+ install npm here with the command
+ npm install
 
-> #### if you want you can create env file and put the db credentials inside that file 
-> #### if you dont still the project will run correctly
+4 if you want you can create env file and put the db credentials inside that file 
+ if you dont still the project will run correctly
 
