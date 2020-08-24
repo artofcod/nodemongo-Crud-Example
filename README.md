@@ -18,3 +18,9 @@ This is a __CRUD__ operation project to understand mongodb with node js.I do not
 4. if you want you can create env file and put the db credentials inside that file 
  if you dont still the project will run correctly
 
+### Endpoints of the api are
+- _(GET)_  /getall
+- _(GET)_  /getone/id
+- _(POST)_  /insert
+- _(PUT)_  /edit/id
+- _(DELETE)_  /delete/id
