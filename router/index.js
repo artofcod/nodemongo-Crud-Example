@@ -5,18 +5,17 @@ const mongo = require('mongodb')
 // inser single data to mongo db
 app.post('/insert', async (req, res) => {
   const data = req.body
-  console.log(req.body['go '])
+
   getDb()
     .then(con => {
       return con.production.collection('h999i').insertOne({ data })
     })
     .then(row => {
-      console.log(row.result)
       res.json({ data: row.ops })
     })
     .catch(err => {
       res.end({ insert: false })
-      console.log(err)
+      throw err
     })
 })
 
@@ -29,7 +28,6 @@ app.get('/getall', async (req, res) => {
       r => r.production.collection('h999i').find({}).toArray()
     )
     .then(r => {
-      console.log(r)
       res.send(r)
     })
     .catch(err => {
@@ -40,15 +38,14 @@ app.get('/getall', async (req, res) => {
 
 // find single data
 app.get('/getone/:id', (req, res) => {
-  const id = req.params.id
-  const mid = new mongo.ObjectID(id)
+  const mid = new mongo.ObjectID(req.params.id)
+
   getDb()
     .then(
       r => r.production.collection('h999i').find({ _id: mid }).toArray()
     )
     .then(
       r => {
-        console.log(r)
         res.send(r)
       }
     )
@@ -65,6 +62,7 @@ app.put('/edit/:id', (req, res) => {
   // this notaition becaus i mistakenly add key with space
   const igo = req.body['go ']
   const ibuga = req.body.buga
+
   getDb()
     .then(
       r => {
@@ -85,24 +83,31 @@ app.put('/edit/:id', (req, res) => {
     )
     .then(
       r => {
-        console.log(r.message)
         res.send(r.value)
       }
     )
+    .catch(err => {
+      res.end({ update: false })
+      throw err
+    })
 })
 
 // Delete a record
 app.delete('/del/:id', (req, res) => {
   const id = mongo.ObjectID(req.params.id)
+
   getDb()
     .then(
       r => r.production.collection('h999i').findOneAndDelete({ _id: id })
     )
     .then(
       r => {
-        console.log(r)
         res.send({ deleted: r })
       }
     )
+    .catch(err => {
+      res.end({ delete: false })
+      throw err
+    })
 })
 module.exports = app

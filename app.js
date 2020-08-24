@@ -19,7 +19,7 @@ app.use(router)
 // database connecitng status
 const database = require('./DB')
 database().then(db => {
-  console.log('connected to database')
+  console.log('connected to database\n')
 })
   .catch(err => {
     if (err) {
@@ -27,9 +27,10 @@ database().then(db => {
     }
   })
 
-app.listen(process.env.PORT, (err) => {
+const port = process.env.PORT || 3000
+app.listen(port, (err) => {
   if (!err) {
-    console.log('\nserver is running at http://localhost:' + process.env.PORT)
+    console.log('\nserver is running at http://localhost:' + port)
   }
 })
 

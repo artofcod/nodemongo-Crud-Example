@@ -1,9 +1,10 @@
 // connect to multiple mongo databases and use their connection
 // through out the application by connecting once
 const Mongo = require('mongodb').MongoClient
+require('dotenv').config()
 
 // db 1
-const url = 'mongodb://localhost:27017/olaf'
+const url = process.env.CONNECT_URL || 'mongodb://localhost:27017/olaf'
 
 // db 2
 // const url2 = 'mongodb://localhost:27017/olaf'
