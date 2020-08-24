@@ -18,4 +18,19 @@ app.post('/insert', async (req, res) => {
     })
 })
 
+// fetching all inserted data
+app.get('/getall', async (req, res) => {
+  getDb()
+    .then(
+      r => r.production.collection('h999i').find({}).toArray()
+    )
+    .then(r => {
+      console.log(r)
+      res.send(r)
+    })
+    .catch(err => {
+      throw err
+    })
+})
+
 module.exports = app
