@@ -90,4 +90,19 @@ app.put('/edit/:id', (req, res) => {
       }
     )
 })
+
+// Delete a record
+app.delete('/del/:id', (req, res) => {
+  const id = mongo.ObjectID(req.params.id)
+  getDb()
+    .then(
+      r => r.production.collection('h999i').findOneAndDelete({ _id: id })
+    )
+    .then(
+      r => {
+        console.log(r)
+        res.send({ deleted: r })
+      }
+    )
+})
 module.exports = app
