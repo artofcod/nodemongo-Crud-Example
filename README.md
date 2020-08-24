@@ -1,4 +1,4 @@
-# nodemongo-Crud-Example
+# Node-Mongo-Crud-Example
 
 This is a __CRUD__ operation project to understand mongodb with node js.I do not use ***ODM(object document model) Mongoose*** to perform database action.Instade i use  __***mongdb and mongoClint***__ to perform database operatin.The reasone is, with mongoose you will barly write mongodb quries . rathe you will write mongoose specific functions taht will not improve mongob understanding.
 
