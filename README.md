@@ -12,8 +12,9 @@ This is a __CRUD__ operation project to understand mongodb with node js.I do not
  Find more detailse about this [Link](https://docs.mongodb.com/manual/installation/)
 
 3. Unzip the folder or go inside open cmd or git bash
+ 
  install npm here with the command
- npm install
+ `npm install`
 
 4. if you want you can create env file and put the db credentials inside that file 
  if you dont still the project will run correctly
